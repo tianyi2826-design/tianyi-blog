@@ -1,0 +1,103 @@
+/* 渐变色彩主题 */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --gradient-main: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-alt: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* 顶部导航栏渐变 */
+#nav {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* 页脚渐变 */
+#footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* 按钮悬停效果 */
+.btn-beautify:hover,
+#rightside > div > button:hover,
+#rightside > div > a:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+}
+
+/* 文章卡片悬停效果 */
+#recent-posts > .recent-post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+/* 侧边栏卡片样式 */
+.card-widget {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 标签云渐变色 */
+.tagcloud a {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin: 3px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.tagcloud a:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  transform: scale(1.1);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* 文章标题渐变 */
+#post-info .post-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 链接颜色 */
+a:hover {
+  color: #764ba2 !important;
+}
+
+/* 目录高亮 */
+.toc-link.active {
+  color: #667eea !important;
+}
+
+/* 加载动画 */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 首页打字机效果增强 */
+#subtitle {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  background-size: 200% 200%;
+  animation: gradient-flow 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
