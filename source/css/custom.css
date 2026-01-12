@@ -1,103 +1,332 @@
-/* 渐变色彩主题 */
+/* ============================
+   Sakura 风格主题 - 花里胡哨版
+   ============================ */
+
 :root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --gradient-main: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --sakura-pink: #ff6b9d;
+  --sakura-dark: #c44569;
+  --sakura-light: #ffb8d0;
+  --gradient-sakura: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
   --gradient-alt: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
-/* 顶部导航栏渐变 */
+/* ====== 自定义鼠标光标 ====== */
+body {
+  cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur), auto;
+}
+
+a, button, .btn, [role="button"] {
+  cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur), pointer;
+}
+
+a:active, button:active {
+  cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur), alias;
+}
+
+input, textarea {
+  cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur), text;
+}
+
+/* ====== 顶部导航栏渐变 ====== */
 #nav {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: var(--gradient-sakura) !important;
 }
 
-/* 页脚渐变 */
+#nav.fixed {
+  background: rgba(255, 107, 157, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* ====== 页脚渐变 ====== */
 #footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: var(--gradient-sakura) !important;
 }
 
-/* 按钮悬停效果 */
+/* ====== 按钮悬停效果 ====== */
 .btn-beautify:hover,
 #rightside > div > button:hover,
 #rightside > div > a:hover {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  background: var(--gradient-alt) !important;
+  transform: scale(1.1);
 }
 
-/* 文章卡片悬停效果 */
-#recent-posts > .recent-post-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-}
-
-/* 侧边栏卡片样式 */
-.card-widget {
-  border-radius: 12px;
+/* ====== 文章卡片悬停效果 ====== */
+#recent-posts > .recent-post-item {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 15px;
   overflow: hidden;
 }
 
-/* 标签云渐变色 */
+#recent-posts > .recent-post-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 107, 157, 0.4);
+}
+
+/* ====== 侧边栏卡片样式 ====== */
+.card-widget {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.card-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+}
+
+/* ====== 头像旋转效果 ====== */
+.card-widget .avatar-img {
+  transition: transform 1s ease;
+}
+
+.card-widget:hover .avatar-img {
+  transform: rotate(360deg);
+}
+
+/* ====== 标签云渐变色 ====== */
 .tagcloud a {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-sakura);
   color: white !important;
   border-radius: 20px;
   padding: 5px 15px;
   margin: 3px;
   display: inline-block;
   transition: all 0.3s ease;
+  border: none !important;
 }
 
 .tagcloud a:hover {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  transform: scale(1.1);
+  background: var(--gradient-alt);
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.5);
 }
 
-/* 滚动条美化 */
+/* ====== 滚动条美化 ====== */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-sakura);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #ffe4ec;
   border-radius: 10px;
 }
 
-/* 文章标题渐变 */
+/* ====== 文章标题渐变 ====== */
 #post-info .post-title {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-sakura);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
 }
 
-/* 链接颜色 */
+/* ====== 链接颜色 ====== */
 a:hover {
-  color: #764ba2 !important;
+  color: var(--sakura-dark) !important;
 }
 
-/* 目录高亮 */
+/* ====== 目录高亮 ====== */
 .toc-link.active {
-  color: #667eea !important;
+  color: var(--sakura-pink) !important;
+  border-left: 3px solid var(--sakura-pink) !important;
 }
 
-/* 加载动画 */
+/* ====== 渐变流动动画 ====== */
 @keyframes gradient-flow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* 首页打字机效果增强 */
+/* ====== 首页打字机效果增强 ====== */
 #subtitle {
-  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-  background-size: 200% 200%;
-  animation: gradient-flow 3s ease infinite;
+  background: linear-gradient(135deg, #ff6b9d, #c44569, #f093fb, #ff6b9d);
+  background-size: 300% 300%;
+  animation: gradient-flow 4s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+}
+
+/* ====== Glitch 故障艺术效果 ====== */
+.glitch {
+  position: relative;
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch:hover::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff6b9d;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 0.5s infinite linear alternate-reverse;
+}
+
+.glitch:hover::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 0.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  20% { clip: rect(62px, 9999px, 42px, 0); }
+  40% { clip: rect(16px, 9999px, 78px, 0); }
+  60% { clip: rect(87px, 9999px, 55px, 0); }
+  80% { clip: rect(24px, 9999px, 14px, 0); }
+  100% { clip: rect(91px, 9999px, 23px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  20% { clip: rect(15px, 9999px, 72px, 0); }
+  40% { clip: rect(48px, 9999px, 29px, 0); }
+  60% { clip: rect(2px, 9999px, 84px, 0); }
+  80% { clip: rect(78px, 9999px, 56px, 0); }
+  100% { clip: rect(33px, 9999px, 97px, 0); }
+}
+
+/* ====== 弹跳动画 ====== */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+  60% { transform: translateY(-7px); }
+}
+
+/* ====== 浮动动画 ====== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ====== 脉冲动画 ====== */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ====== 右侧按钮浮动效果 ====== */
+#rightside > div > button,
+#rightside > div > a {
+  animation: float 3s ease-in-out infinite;
+  background: var(--gradient-sakura) !important;
+  border: none !important;
+}
+
+#rightside > div > button:nth-child(2),
+#rightside > div > a:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+#rightside > div > button:nth-child(3),
+#rightside > div > a:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* ====== 代码块 macOS 风格 ====== */
+figure.highlight::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 12px;
+  height: 12px;
+  background: #fc625d;
+  border-radius: 50%;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+}
+
+figure.highlight {
+  position: relative;
+  padding-top: 30px !important;
+  border-radius: 10px;
+  background: #1d1f21 !important;
+}
+
+/* ====== 彩虹边框动画 ====== */
+@keyframes rainbow-border {
+  0% { border-color: #ff6b9d; }
+  25% { border-color: #f093fb; }
+  50% { border-color: #667eea; }
+  75% { border-color: #00fff9; }
+  100% { border-color: #ff6b9d; }
+}
+
+/* ====== 搜索框美化 ====== */
+#local-search-input {
+  border: 2px solid var(--sakura-pink) !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease;
+}
+
+#local-search-input:focus {
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+  animation: rainbow-border 3s linear infinite;
+}
+
+/* ====== 页面加载动画 ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recent-post-item {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.recent-post-item:nth-child(1) { animation-delay: 0.1s; }
+.recent-post-item:nth-child(2) { animation-delay: 0.2s; }
+.recent-post-item:nth-child(3) { animation-delay: 0.3s; }
+.recent-post-item:nth-child(4) { animation-delay: 0.4s; }
+.recent-post-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* ====== 网站标题呼吸效果 ====== */
+#site-name {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ====== 樱花 Canvas 容器 ====== */
+#sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+/* ====== 暗色模式适配 ====== */
+[data-theme="dark"] .card-widget {
+  background: rgba(30, 30, 30, 0.9) !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #2d2d2d;
 }
